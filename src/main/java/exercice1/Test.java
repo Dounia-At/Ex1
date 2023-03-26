@@ -2,6 +2,8 @@ package exercice1;
 
 import java.util.Scanner;
 
+import exercice1.LinkedList.Node;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -15,6 +17,22 @@ public class Test {
             System.out.println("Number : " + palindrome + " is not a palindrome");
         }     
 		
+        
+        //test linked list
+        LinkedList linkedList = new LinkedList();
+
+	    linkedList.head = new Node(1);
+	    Node second = new Node(2);
+	    Node third = new Node(3);
+
+	    linkedList.head.next = second;
+	    second.next = third;
+
+	    System.out.print("LinkedList: ");
+	    while (linkedList.head != null) {
+	      System.out.print(linkedList.head.value + " ");
+	      linkedList.head = linkedList.head.next;
+	    }
 	}
 
 }
