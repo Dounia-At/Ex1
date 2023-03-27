@@ -29,10 +29,11 @@ public class Test {
 	    second.next = third;
 
 	    System.out.print("LinkedList: ");
-	    while (linkedList.head != null) {
-	      System.out.print(linkedList.head.value + " ");
-	      linkedList.head = linkedList.head.next;
-	    }
+	    linkedList.printList(linkedList.head);
+        System.out.println("");
+	    System.out.println("Reversed linked list ");
+	    linkedList.head = linkedList.reverse(linkedList.head);
+        linkedList.printList(linkedList.head);
 	}
 
 }
