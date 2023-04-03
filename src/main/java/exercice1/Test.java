@@ -67,6 +67,16 @@ public class Test {
         
         System.out.println("");
         
-        }
+        //test queue
+        System.out.println("TEST QUEUE");
+        Queue q = new Queue();
+        q.enqueue(10);
+        q.enqueue(20);
+        q.dequeue();
+        q.enqueue(30);
+        q.enqueue(40);
+        System.out.println("Queue Front : " + ((q.front != null) ? (q.front).value : -1));
+        System.out.println("Queue Rear : " + ((q.rear != null) ? (q.rear).value : -1));
+	}
 
 }
