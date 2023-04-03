@@ -8,7 +8,9 @@ public class LinkedList {
 	    int value;
 
 	    Node next;
-
+	    
+	    Node() {
+		    }
 	    Node(int d) {
 	      value = d;
 	      next = null;
