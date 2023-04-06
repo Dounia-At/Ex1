@@ -25,7 +25,7 @@ public class Stack {
             return;
         }
  
-        System.out.println("Inserting " + x);
+        //System.out.println("Inserting " + x);
  
         // set data in the allocated node
         list.reverse();
@@ -64,7 +64,7 @@ public class Stack {
         // take note of the head node's data
         Object head = peek();
  
-        System.out.println("Removing " + head);
+        //System.out.println("Removing " + head);
  
         // decrease stack's size by 1
         this.nodesCount -= 1;

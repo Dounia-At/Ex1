@@ -81,6 +81,24 @@ public class Test {
         q.enqueue(40);
         System.out.println("Queue Front : " + ((q.list.head != null) ? (q.list.head).value : -1));
         System.out.println("Queue Rear : " + ((q.rear != null) ? (q.rear).value : -1));
+        
+        System.out.println("\n");
+        
+        //test queue
+        System.out.println("TEST Expression");
+        System.out.println("__________________________");
+        
+        String expr = "[()]{}{[()()]()}";
+        if (new StringExp().isBalanced(expr))
+            System.out.println(expr +" is Balanced ");
+        else
+            System.out.println(expr + " is Not Balanced ");
+        
+        expr = "[(])";                
+        if (new StringExp().isBalanced(expr))
+            System.out.println(expr +" is Balanced ");
+        else
+            System.out.println(expr + " is Not Balanced ");
 	}
 
 }
