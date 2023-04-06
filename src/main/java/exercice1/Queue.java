@@ -1,14 +1,17 @@
 package exercice1;
 
-import exercice1.LinkedList.Node;
 
 public class Queue {
-	Node front, rear;
+	LinkedList list;
+	Node rear;
 	 
-    public Queue() { this.front = this.rear = null; }
+    public Queue() { 
+    	this.list = new LinkedList();
+    	this.list.head = this.rear = null; 
+    	}
  
     // Method to add an key to the queue.
-    void enqueue(int key)
+    void enqueue(Object key)
     {
  
         // Create a new LL node
@@ -17,13 +20,13 @@ public class Queue {
         // If queue is empty, then new node is front and
         // rear both
         if (this.rear == null) {
-            this.front = this.rear = temp;
+            this.list.head = this.rear = temp;
             return;
         }
         
         // Add the new node at the end of queue and change
         // rear
-        this.rear.next = temp;
+        list.Add(key);
         this.rear = temp;
     }
  
@@ -31,18 +34,18 @@ public class Queue {
     void dequeue()
     {
         // If queue is empty, return NULL.
-        if (this.front == null)
+        if (this.list.head == null)
             return;
  
         // Store previous front and move front one node
         // ahead
-        System.out.println("Removing " + this.front.value);
-        Node temp = this.front;
-        this.front = this.front.next;
+        System.out.println("Removing " + this.list.head.value);
+        Node temp = this.list.head;
+        this.list.head = this.list.head.next;
  
         // If front becomes NULL, then change rear also as
         // NULL
-        if (this.front == null)
+        if (this.list.head == null)
             this.rear = null;
     }
 }

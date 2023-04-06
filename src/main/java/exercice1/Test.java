@@ -2,7 +2,6 @@ package exercice1;
 
 import java.util.Scanner;
 
-import exercice1.LinkedList.Node;
 
 public class Test {
 
@@ -22,30 +21,35 @@ public class Test {
         
         //test linked list
         System.out.println("TEST LINKED LIST");
+        System.out.println("__________________________");
         LinkedList linkedList = new LinkedList();
 
-	    linkedList.head = new Node(1);
-	    Node second = new Node(2);
-	    Node third = new Node(3);
+	    linkedList.Add(1);
+	    linkedList.Add(2);
+	    linkedList.Add(5);
+	    linkedList.Remove();
+	    linkedList.Add(3);
+	    
 
-	    linkedList.head.next = second;
-	    second.next = third;
-
-	    System.out.print("LinkedList: ");
-	    linkedList.printList(linkedList.head);
+	    System.out.print("Linked List : ");
+	    linkedList.printList();
         System.out.println("\n");
+        
+        
         
         //test reversed linked list
         System.out.println("TEST REVERSE LINKED LIST");
-	    System.out.println("Reversed linked list ");
-	    linkedList.head = linkedList.reverse(linkedList.head);
-        linkedList.printList(linkedList.head);
+        System.out.println("__________________________");
+	    System.out.print("Reversed linked list : ");
+	    linkedList.head = linkedList.reverse();
+        linkedList.printList();
         
         System.out.println("\n");
         
         //test stack
 
         System.out.println("TEST STACK");
+        System.out.println("__________________________");
         Stack stack = new Stack();
 		 
         stack.push(1);
@@ -55,27 +59,27 @@ public class Test {
         System.out.println("The top element is " + stack.peek());
  
         stack.pop();
-        stack.pop();
-        stack.pop();
  
         if (stack.isEmpty()) {
             System.out.println("The stack is empty");
         }
         else {
-            System.out.println("The stack is not empty");
+            System.out.print("The stack is not empty : ");
+            stack.print();
         }
         
-        System.out.println("");
+        System.out.println("\n");
         
         //test queue
         System.out.println("TEST QUEUE");
+        System.out.println("__________________________");
         Queue q = new Queue();
         q.enqueue(10);
         q.enqueue(20);
         q.dequeue();
         q.enqueue(30);
         q.enqueue(40);
-        System.out.println("Queue Front : " + ((q.front != null) ? (q.front).value : -1));
+        System.out.println("Queue Front : " + ((q.list.head != null) ? (q.list.head).value : -1));
         System.out.println("Queue Rear : " + ((q.rear != null) ? (q.rear).value : -1));
 	}
 
